@@ -15,12 +15,14 @@ const Form = () => {
         </div>
         <div className="body"></div>
         <div className="footer">
-          <button>
-            <ArrowUturnLeftIcon className="w-1 h-1" />
+          <button className="w-2 h-2">
+            <ArrowUturnLeftIcon className="w-5 h-5" />
             Back
           </button>
+        </div>
+        <div>
           <button>
-            <ArrowRightIcon className="w-1 h-1" />
+            <ArrowRightIcon className="w-5 h-5" />
             Next
           </button>
         </div>

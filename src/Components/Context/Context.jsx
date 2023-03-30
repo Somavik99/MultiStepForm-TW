@@ -1,9 +1,9 @@
-import React, { createContext } from "react";
+import React, { createContext, useReducer } from "react";
 
 export const FormContext = createContext();
-const Context = () => {
-    
-  return <div>Context</div>;
+const Context = ({ children }) => {
+  const [state, dispatch] = useReducer(ContextState,);
+  return <FormContext.Provider>{children}</FormContext.Provider>;
 };
 
 export default Context;
