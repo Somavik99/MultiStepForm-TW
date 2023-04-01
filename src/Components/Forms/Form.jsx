@@ -1,17 +1,21 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import {
   ArrowUturnLeftIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
+import { FormContext, FormHeader } from "../Context/Context";
 
 const Form = () => {
-  const [FormStep, setFormStep] = useState(0);
-  const FormHeader = ["Sign Up", "Personal Info", "Location", "Plans"];
+  const GlobalFormContext = useContext(FormContext);
+  const dispatch = GlobalFormContext.dispatch;
+  const NextPage = () => {
+    dispatch({ type: "NEXT", payload: Page });
+  };
   return (
     <div className="Form">
       <div className="Form_container">
         <div className="header">
-          <h1>{FormHeader[FormStep]}</h1>
+          <h1>{FormHeader}</h1>
         </div>
         <div className="body"></div>
         <div className="footer">
@@ -21,7 +25,7 @@ const Form = () => {
           </button>
         </div>
         <div>
-          <button>
+          <button onClick={NextPage}>
             <ArrowRightIcon className="w-5 h-5" />
             Next
           </button>
