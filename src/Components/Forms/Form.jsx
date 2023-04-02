@@ -1,21 +1,23 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import {
   ArrowUturnLeftIcon,
   ArrowRightIcon,
 } from "@heroicons/react/24/outline";
-import { FormContext, FormHeader } from "../Context/Context";
 
 const Form = () => {
-  const GlobalFormContext = useContext(FormContext);
-  const dispatch = GlobalFormContext.dispatch;
-  const NextPage = () => {
-    dispatch({ type: "NEXT", payload: Page });
-  };
+  const [FormPage, setFormPage] = useState(0);
+  const FormHeader = [
+    "Sign Up",
+    "Personal Details",
+    "Address",
+    "Terms & conditions",
+  ];
+  const NextPage = () => {};
   return (
     <div className="Form">
       <div className="Form_container">
         <div className="header">
-          <h1>{FormHeader}</h1>
+          <h1>{FormHeader[FormPage]}</h1>
         </div>
         <div className="body"></div>
         <div className="footer">
